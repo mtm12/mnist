@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ML Model MNIST</title>
+	<link href="../css/css.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="../../cgi-bin/js/index_mnist.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+</head>
+
+<body onLoad="page_load()">
+<table width="1200" border="0" align="center" style="border-spacing: 0px">
+  <tbody>
+	<tr>
+      <td width="200">&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="header" colspan="4">Demonstration Of Deployed Keras Machine Learning Model <br>Using MNIST Dataset </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="title">Draw a number in the box then click the "Predict" button</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+	  <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>
+	<table width="100%" border="0">
+			  <tbody>
+				<tr>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td><canvas id="canvas" width="400" height="400" style="border:2px solid;"></canvas></td>
+				  <td><canvas id="canvas2" width="28" height="28" style="border:2px solid;"></canvas></td>
+				  <td class="center"><input type="button" id="predict_button" class="predict_btn" value="Predict" onClick="predict()"></td>
+				  <td class="center"><span class="results_lg" id="digit">0</span><br><span class="results">Digit</span></td>
+				  <td class="center"><span class="results_lg" id="probability">00.0%</span><br><span class="results">Probability</span></td>
+				</tr>
+			  </tbody>
+			</table>
+		</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+		</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>
+		<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <td align="center" width="50%"><input type="button" id="clear_button" class="predict_btn" value="Clear" onClick="erase()"></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+		</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="ref_header">References:</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Source code:</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Model development video: </td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Model deployment video:</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Dataset: </td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="title">How it works</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td align="center"></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="center">&copy;2018 Marc McLean</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
