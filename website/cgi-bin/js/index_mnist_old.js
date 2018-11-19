@@ -12,7 +12,59 @@ var x = "black",
 var image2828 = new Image();
 var image = new Image();
 
+
 function predict(){
+	
+
+	image.src = canvas.toDataURL("image/png");
+	
+	  image.addEventListener('load', function () {
+    		ctx2.drawImage(this, 0, 0, 400, 400, 0, 0, 28, 28);
+		  	
+  		});
+	
+	image2828.src = canvas2.toDataURL("image/png");
+	
+	
+	setTimeout(func, 4000);
+	function func() {
+		$.ajax({
+		type: "POST",
+		url: "../cgi-bin/php/predict_mnist.php",
+		async: false,
+		datatype: 'json',
+		data: {
+			imgBase64: image2828.src
+			//imgBase64: canvas2.toDataURL("image/png")
+		},
+		success: function(response){
+			try {
+				digit_id.innerHTML = "Error";
+				probability_id.innerHTML = "Error";
+				console.log(response);
+				//var obj = JSON.parse(response);
+				//console.log(obj.benign);
+				//console.log(obj.malignant);
+				//pneumonia_id.innerHTML = (parseFloat(obj.benign)*100).toFixed(1) + "%";
+				//non_pneumonia_id.innerHTML = (parseFloat(obj.malignant)*100).toFixed(1) + "%";
+			}
+			catch(err){
+			/*	console.log(response);
+				pneumonia_id.innerHTML = "Error";
+				non_pneumonia_id.innerHTML = "Error";*/
+			}
+
+		},
+		error: function(response){
+			/*console.log(response);
+			pneumonia_id.innerHTML = "Error";
+			non_pneumonia_id.innerHTML = "Error";*/
+		}
+	})
+	}
+}
+
+function predict2(){
 	promise = getImage().then(sendData());
 }
 
@@ -38,23 +90,23 @@ function sendData(){
 				digit_id.innerHTML = "Error";
 				probability_id.innerHTML = "Error";
 				console.log(response);
-				var obj = JSON.parse(response);
+				//var obj = JSON.parse(response);
 				//console.log(obj.benign);
 				//console.log(obj.malignant);
-				digit_id.innerHTML = obj.digit;
-				probability_id.innerHTML = (parseFloat(obj.probability)*100).toFixed(1) + "%";
+				//pneumonia_id.innerHTML = (parseFloat(obj.benign)*100).toFixed(1) + "%";
+				//non_pneumonia_id.innerHTML = (parseFloat(obj.malignant)*100).toFixed(1) + "%";
 			}
 			catch(err){
-				console.log(response);
-				digit_id.innerHTML = "Error";
-				probability_id.innerHTML = "Error";
+			/*	console.log(response);
+				pneumonia_id.innerHTML = "Error";
+				non_pneumonia_id.innerHTML = "Error";*/
 			}
 
 		},
 		error: function(response){
-			console.log(response);
-			digit_id.innerHTML = "Error";
-			probability_id.innerHTML = "Error";
+			/*console.log(response);
+			pneumonia_id.innerHTML = "Error";
+			non_pneumonia_id.innerHTML = "Error";*/
 		}
 	})
 	return d.promise()
@@ -76,8 +128,6 @@ function erase() {
     //if (m) {
         ctx.clearRect(0, 0, w, h);
 		ctx2.clearRect(0, 0, w, h);
-		digit_id.innerHTML = "";
-		probability_id.innerHTML = "";
         //document.getElementById("canvasimg").style.display = "none";
     //}
 }
